@@ -52,9 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function endQuiz() {
         clearInterval(timerInterval);
-        alert("Quiz complete! Score:" + score);
+        var quizDoneEl = document.createElement("div")
+        quizDoneEl.textContent = "Quiz complete! Score:" + score;
         localStorage.setItem("quizScore", score);
+        document.body.appendChild(quizDoneEl);
         resetQuiz();
+        setTimeout(function () {
+            window.location.href = "result.html"
+        })
     }
     function resetQuiz() {
         currentQuestion = 0;
