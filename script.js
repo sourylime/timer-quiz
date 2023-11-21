@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var timerInterval;
     var score = 0;
 
+    var boodyEl = document.getElementById("boody");
+
+    if (boodyEl) {
+        boodyEl.style.backgroundColor = "#E6C0E8"
+    }
+
+
     var questions = [
         {
             question: "JavaScript is an __________ language?",
@@ -26,12 +33,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     ];
+    if (questionText) {
+        questionText.style.fontSize = "36px";
+        questionText.style.color = "#60526A";
+        questionText.style.display = "flex";
+        questionText.style.marginLeft = "225px";
+    }
 
+    if (choicesEl) {
+        choicesEl.style.color = "#8F3B94";
+        choicesEl.style.marginLeft = "450px";
+    }
+    if (submitBtn) {
+        submitBtn.style.marginLeft = "450px";
+        submitBtn.style.marginTop = "15px";
+    }
+
+    if (timerDisplay) {
+        timerDisplay.style.marginLeft = "450px";
+        timerDisplay.style.marginTop = "10px";
+    }
     function displayQuestion() {
         startTimer();
 
         if (currentQuestion < questions.length) {
             questionText.textContent = questions[currentQuestion].question;
+            questionText.style.backgroundColor = ""
             choicesEl.innerHTML = "";
             choicesEl.style.listStyleType = "none";
 
@@ -110,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     submitBtn.addEventListener("click", handleSubmission);
     displayQuestion();
+
 
 
 });

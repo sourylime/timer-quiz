@@ -7,16 +7,20 @@
     <title>JavaScript Quiz - Welcome</title>
 </head>
 
-<body>
-    <h1>Welcome to the JavaScript Quiz</h1>
+<body id="body">
+    <h1 id="title">Welcome to the JavaScript Quiz</h1>
 
-    <button onclick="startQuiz()">Start Quiz</button>
+    <div id="button-container">
+        <button id="startBtn" onclick="startQuiz()">Start Quiz</button>
+    </div>
 
     <script>
         function startQuiz() {
             window.location.href = "quiz.html";
         }
     </script>
+
+    <script src="welcome.js"></script>
 </body>
 
 </html>
